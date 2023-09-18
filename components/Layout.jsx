@@ -4,7 +4,7 @@ import { Box } from '@chakra-ui/react';
 const Layout = ({ children }) => (
   <>
     <Head>
-      <title>Real Estat</title>
+      <title>Real Estate</title>
     </Head>
     <Box
       maxWidth='1280px'
