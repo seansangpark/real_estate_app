@@ -26,7 +26,7 @@ const Navbar = () => (
     >
       <Link
         href='/'
-        poaddingLeft='2'
+        paddingleft='2'
       >
         Spark Realtor
       </Link>

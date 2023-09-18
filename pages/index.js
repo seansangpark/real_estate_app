@@ -61,7 +61,8 @@ const Banner = ({
 );
 
 export default function Home({ propertiesForSale, propertiesForRent }) {
-  console.log(propertiesForSale, propertiesForRent);
+  // console.log(propertiesForSale, propertiesForRent);
+  console.log('api connected');
   return (
     <Box>
       <Banner
