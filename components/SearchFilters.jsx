@@ -15,7 +15,14 @@ import Image from 'next/image';
 
 const SearchFilters = () => {
   const [filters, setFilters] = useState({});
-  return <div>searchFilters</div>;
+
+  return (
+    <Flex
+      bg='gray.100'
+      justifyContent='center'
+      flexWrap='wrap'
+    ></Flex>
+  );
 };
 
 export default SearchFilters;
