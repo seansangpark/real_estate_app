@@ -15,9 +15,10 @@ const LeftArrow = () => {
     >
       <Icon
         as={FaArrowAltCircleLeft}
-        onClick={scrollPrev}
+        onClick={() => scrollPrev()}
         fontSize='2xl'
         cursor='pointer'
+        d={['none', 'none', 'none', 'block']}
       />
     </Flex>
   );
@@ -30,44 +31,46 @@ const RightArrow = () => {
     <Flex
       justifyContent='center'
       alignItems='center'
-      marginRight='1'
+      marginLeft='1'
     >
       <Icon
         as={FaArrowAltCircleRight}
-        onClick={scrollNext}
+        onClick={() => scrollNext()}
         fontSize='2xl'
         cursor='pointer'
+        d={['none', 'none', 'none', 'block']}
       />
     </Flex>
   );
 };
-
-const ImageScrollBar = ({ data }) => (
-  <ScrollMenu
-    LeftArrow={LeftArrow}
-    RightArrow={RightArrow}
-    style={{ overflow: 'hidden' }}
-  >
-    {data.map((image) => (
-      <Box
-        width='910px'
-        itemId={image.id}
-        overflow='hidden'
-        p='1'
-        key={image.id}
-      >
-        <Image
-          placeholder='blur'
-          blurDataURL={image.url}
-          src={image.url}
-          width={1000}
-          height={500}
-          sizes='(max-width:500px) 100px, (max-width):1023px 400px, 1000px'
-          alt='property'
-        />
-      </Box>
-    ))}
-  </ScrollMenu>
-);
+const ImageScrollBar = ({ data }) => {
+  return (
+    <ScrollMenu
+      LeftArrow={LeftArrow}
+      RightArrow={RightArrow}
+      style={{ overflow: 'hidden' }}
+    >
+      {data.map((item) => (
+        <Box
+          width='910px'
+          itemId={item.id}
+          overflow='hidden'
+          p='1'
+          key={item.id}
+        >
+          <Image
+            placeholder='blur'
+            blurDataURL={item.url}
+            src={item.url}
+            width={1000}
+            height={500}
+            sizes='(max-width: 500px) 100px, (max-width: 1023px) 400px, 1000px'
+            alt='property'
+          />
+        </Box>
+      ))}
+    </ScrollMenu>
+  );
+};
 
 export default ImageScrollBar;
